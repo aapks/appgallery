@@ -33,3 +33,4 @@ Updating and submitting your app:
 
 '''
 from appgallery.api import Client
+import appgallery.utils as utils
