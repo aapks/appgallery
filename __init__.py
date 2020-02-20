@@ -32,14 +32,4 @@ Updating and submitting your app:
     my_app.submit_for_release()
 
 '''
-import os
-
 from api import Client
-
-os.environ['HUAWEI_CREDENTIALS_PATH'] = r'D:\healplease\PYTHON\huawei_upload\huawei_credentials.json'
-client = Client()
-
-apps = client.query_app('com.absolutist.littleelephanthidden.huawei')
-
-app = apps[0]
-print(app)
