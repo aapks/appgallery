@@ -55,7 +55,7 @@ class AccessToken():
         return 'Bearer {}'.format(self.token)
 
     def is_expired(self):
-        return time.time > self.expires_in
+        return time.time() > self.expires_in
 
 class Upload():
     def __init__(self, parsed: dict):
@@ -89,8 +89,8 @@ class Upload():
 
 class Message():
     def __init__(self, parsed: dict):
-        self.code = parsed.get('code')
-        self.description = parsed.get('msg')
+        self.code = parsed.get('code', 0)
+        self.description = parsed.get('msg', '')
 
 class HuaweiException(BaseException):
     def __init__(self, *args, **kwargs):

@@ -21,12 +21,25 @@ Working with apps:
 
 Uploading files:
     my_app.obtain_upload_URL(extension='apk')
-    file_info = my_app.upload.upload_file(filepath='path/to/apk')
+    file_info = my_app.upload.upload_file(filepath='path/to/package.apk')
+
+Upload can be used as object too:
+    my_upload = my_app.obtain_upload_URL(extension='png')
+    file_info = my_upload.upload_file(filepath='path/to/picture.png')
 
 Updating and submitting your app:
     my_app.update_app_file_info(lang='en_US', filetype=utils.FT_APK_OR_RPK, file_info=file_info)
     my_app.submit_for_release()
 
 '''
+import os
 
 from api import Client
+
+os.environ['HUAWEI_CREDENTIALS_PATH'] = r'D:\healplease\PYTHON\huawei_upload\huawei_credentials.json'
+client = Client()
+
+apps = client.query_app('com.absolutist.littleelephanthidden.huawei')
+
+app = apps[0]
+print(app)
