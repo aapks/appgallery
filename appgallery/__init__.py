@@ -32,4 +32,4 @@ Updating and submitting your app:
     my_app.submit_for_release()
 
 '''
-from api import Client
+from appgallery.api import Client
