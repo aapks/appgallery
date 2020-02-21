@@ -6,7 +6,7 @@ import json
 
 import requests
 
-from utils import AccessToken, Credentials, Upload, Message, AppInfo, AuditInfo, LangInfo, FileInfo, HuaweiException
+from .utils import AccessToken, Credentials, Upload, Message, AppInfo, AuditInfo, LangInfo, FileInfo, HuaweiException
 
 class App():
     '''This class represents App.
@@ -268,13 +268,13 @@ class Client():
             'lang': lang.language
         }
         if lang.app_name:
-            body.update({ 'appName': lang.app_name })
+            body.update({ 'appName': lang.appName })
         if lang.app_description:
-            body.update({ 'appDesc': lang.app_description })
+            body.update({ 'appDesc': lang.appDesc })
         if lang.brief_info:
-            body.update({ 'briefInfo': lang.brief_info })
+            body.update({ 'briefInfo': lang.briefInfo })
         if lang.new_features:
-            body.update({ 'newFeatures': lang.new_features })
+            body.update({ 'newFeatures': lang.newFeatures })
 
         headers = {
             'client_id': self.credentials.client_id,
@@ -300,7 +300,7 @@ class Client():
         url = Client.API_URL + 'publish/v2/app-language-info'
         data = {
             'appId': app.id,
-            'lang': lang if isinstance(lang, str) else lang.language
+            'lang': lang if isinstance(lang, str) else lang.lang
         }
         headers = {
             'client_id': self.credentials.client_id,
@@ -370,7 +370,7 @@ class Client():
             https://developer.huawei.com/consumer/en/service/hms/catalog/AGCConnectAPI.html?page=hmssdk_appGalleryConnect_api_reference_update_file_info_V2#Request%20Body'''
         url = Client.API_URL + '/publish/v2/app-file-info?appId=' + app.id
         body = {
-            'lang': lang if isinstance(lang, str) else lang.language,
+            'lang': lang if isinstance(lang, str) else lang.lang,
             'fileType': file_type,
             'files' : file_info if isinstance(file_info, list) else [file_info,]
         }
