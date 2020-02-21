@@ -102,67 +102,67 @@ class HuaweiException(BaseException):
 
 class AppInfo():
     def __init__(self, parsed: dict):
-        self.release_state = parsed.get('releaseState')
-        self.default_language = parsed.get('defaultLang')
-        self.parent_type = parsed.get('parentType')
-        self.child_type = parsed.get('childType')
-        self.grandchild_type = parsed.get('grandChildType')
-        self.privacy_policy = parsed.get('privacyPolicy')
-        self.app_net_type = parsed.get('appNetType')
-        self.is_free = parsed.get('isFree')
+        self.releaseState = parsed.get('releaseState')
+        self.defaultLang = parsed.get('defaultLang')
+        self.parentType = parsed.get('parentType')
+        self.childType = parsed.get('childType')
+        self.grandChildType = parsed.get('grandChildType')
+        self.privacyPolicy = parsed.get('privacyPolicy')
+        self.appNetType = parsed.get('appNetType')
+        self.isFree = parsed.get('isFree')
         self.price = parsed.get('price')
-        self.publish_country = parsed.get('publishCountry')
-        self.content_rate = parsed.get('contentRate')
-        self.is_app_forsed_update = parsed.get('isAppForcedUpdate')
-        self.sensitive_permission_desc = parsed.get('sensitivePermissionDesc')
-        self.hispace_auto_down = parsed.get('hispaceAutoDown')
-        self.app_tariff_type = parsed.get('appTariffType')
-        self.publication_number = parsed.get('publicationNumber')
-        self.culture_record_number = parsed.get('cultureRecordNumber')
-        self.developer_addr = parsed.get('developerAddr')
-        self.developer_email = parsed.get('developerEmail')
-        self.developer_phone = parsed.get('developerPhone')
-        self.developer_website = parsed.get('developerWebsite')
-        self.developer_name_chinese = parsed.get('developerNameCn')
-        self.developer_name_english = parsed.get('developerNameEn')
-        self.elec_certificate_URL = parsed.get('elecCertificateUrl')
-        self.certificate_URLs = parsed.get('certificateURLs')
-        self.publication_URLs = parsed.get('publicationURLs')
-        self.culture_record_URLs = parsed.get('cultureRecordURLs')
-        self.update_time = parsed.get('updateTime')
-        self.version_number = parsed.get('versionNumber')
-        self.family_share_tag = parsed.get('familyShareTag')
+        self.publishCountry = parsed.get('publishCountry')
+        self.contentRate = parsed.get('contentRate')
+        self.isAppForcedUpdate = parsed.get('isAppForcedUpdate')
+        self.sensitivePermissionDesc = parsed.get('sensitivePermissionDesc')
+        self.hispaceAutoDown = parsed.get('hispaceAutoDown')
+        self.appTariffType = parsed.get('appTariffType')
+        self.publicationNumber = parsed.get('publicationNumber')
+        self.cultureRecordNumber = parsed.get('cultureRecordNumber')
+        self.developerAddr = parsed.get('developerAddr')
+        self.developerEmail = parsed.get('developerEmail')
+        self.developerPhone = parsed.get('developerPhone')
+        self.developerWebsite = parsed.get('developerWebsite')
+        self.developerNameCn = parsed.get('developerNameCn')
+        self.developerNameEn = parsed.get('developerNameEn')
+        self.elecCertificateUrl = parsed.get('elecCertificateUrl')
+        self.certificateURLs = parsed.get('certificateURLs')
+        self.publicationURLs = parsed.get('publicationURLs')
+        self.cultureRecordURLs = parsed.get('cultureRecordURLs')
+        self.updateTime = parsed.get('updateTime')
+        self.versionNumber = parsed.get('versionNumber')
+        self.familyShareTag = parsed.get('familyShareTag')
 
     def JSON(self):
         return json.dumps(self, default=lambda x: x.__dict__)
 
 class LangInfo():
     def __init__(self, parsed: dict):
-        self.language = parsed.get('lang')
-        self.app_name = parsed.get('appName')
-        self.app_description = parsed.get('appDesc')
-        self.brief_info = parsed.get('briefInfo')
-        self.new_features = parsed.get('newFeatures')
+        self.lang = parsed.get('lang')
+        self.appName = parsed.get('appName')
+        self.appDesc = parsed.get('appDesc')
+        self.briefInfo = parsed.get('briefInfo')
+        self.newFeatures = parsed.get('newFeatures')
         self.icon = parsed.get('icon')
-        self.show_type = parsed.get('showType')
-        self.video_show_type = parsed.get('videoShowType')
-        self.intro_pic = parsed.get('introPic')
-        self.intro_video = parsed.get('introVideo')
-        self.recommend_pic = parsed.get('rcmdPic')
-        self.recommend_video = parsed.get('rcmdVideo')
+        self.showType = parsed.get('showType')
+        self.videoShowType = parsed.get('videoShowType')
+        self.introPic = parsed.get('introPic')
+        self.introVideo = parsed.get('introVideo')
+        self.rcmdPic = parsed.get('rcmdPic')
+        self.rcmdVideo = parsed.get('rcmdVideo')
 
     def JSON(self):
         return json.dumps(self, default=lambda x: x.__dict__)
 
 class AuditInfo():
     def __init__(self, parsed: dict):
-        self.opinion = parsed.get('auditOpinion')
-        self.copyright_result = parsed.get('copyRightAuditResult')
-        self.copyright_opinion = parsed.get('copyRightAuditOpinion')
-        self.copyright_code_result = parsed.get('copyRightCodeAuditResult')
-        self.copyright_code_opinion = parsed.get('copyRightCodeAuditOpinion')
-        self.record_result = parsed.get('recordAuditResult')
-        self.record_opinion = parsed.get('recordAuditOpinion')
+        self.auditOpinion = parsed.get('auditOpinion')
+        self.copyRightAuditResult = parsed.get('copyRightAuditResult')
+        self.copyRightAuditOpinion = parsed.get('copyRightAuditOpinion')
+        self.copyRightCodeAuditResult = parsed.get('copyRightCodeAuditResult')
+        self.copyRightCodeAuditOpinion = parsed.get('copyRightCodeAuditOpinion')
+        self.recordAuditResult = parsed.get('recordAuditResult')
+        self.recordAuditOpinion = parsed.get('recordAuditOpinion')
 
     def JSON(self):
         return json.dumps(self, default=lambda x: x.__dict__)
@@ -174,3 +174,12 @@ class FileInfo():
         self.size = parsed.get('size')
         self.image_resolution = parsed.get('imageResolution')
         self.image_resolution_signature = parsed.get('imageResolutionSingature')
+
+    def JSON(self):
+        return json.dumps({
+            'fileDestUlr': self.destination_URL,
+            'name': self.name,
+            'size': self.size,
+            'imageResolution': self.image_resolution,
+            'imageResolutionSingature': self.image_resolution_signature
+        })
