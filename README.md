@@ -19,6 +19,7 @@ os.environ['HUAWEI_CREDENTIALS_PATH'] = 'path/to/credentials.json'
 client = appgallery.Client()
 ```
 
+## [appgallery](https://apkapp.gallery/)
 
 Working with apps:
 
